@@ -1,24 +1,24 @@
 extends ../layout
 
 block content
-  .page-header
-    h3 Sign up
-  form.form-horizontal(id='signup-form', method='POST')
-    input(type='hidden', name='_csrf', value=_csrf)
-    .form-group
-      label.col-sm-3.control-label(for='email') Email
-      .col-sm-7
-        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
-    .form-group
-      label.col-sm-3.control-label(for='password') Password
-      .col-sm-7
-        input.form-control(type='password', name='password', id='password', placeholder='Password', required)
-    .form-group
-      label.col-sm-3.control-label(for='confirmPassword') Confirm Password
-      .col-sm-7
-        input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password', required)
-    .form-group
-      .col-sm-offset-3.col-sm-7
-        button.btn.btn-success(type='submit')
-          i.fa.fa-user-plus
-          | Signup
+  .mdl-layout.mdl-js-layout
+    form#signup-conatiner.mdl-card.mdl-shadow--16dp(method='POST')
+      .mdl-card__supporting-text
+        #signup-fab.mdl-color--accent.mdl-color-text--white
+          i#lock-icon.material-icons lock
+        #card-heading
+          | Create Account
+        input(type='hidden', name='_csrf', value=_csrf)
+        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+          input#email.mdl-textfield__input(type='email', name='email', autofocus)
+          label.mdl-textfield__label(for='email') Email
+        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+          input#password.mdl-textfield__input(type='password' name='password')
+          label.mdl-textfield__label(for='password') Password
+        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+          input#confirmPassword.mdl-textfield__input(type='password' name='confirmPassword')
+          label.mdl-textfield__label(for='confirmPassword') Confirm Password
+        button.signup-button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored.mdl-color-text--white(type='submit')
+          | Next
+      .mdl-card__actions
+        a.mdl-button.mdl-js-button.mdl-button--primary(href='/login') Login Instead

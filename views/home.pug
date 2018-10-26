@@ -1,9 +1,16 @@
 extends layout
 
 block content
-  h1 eShopping
-  p.lead Best offers for leading e-commerce
+  h1 e-title
+  p.lead lead title
   hr
+  .row
+    each offer in offerList
+      .col-sm-6
+        h2 #{offer.title}
+        p #{offer.description}
+        p
+          a.btn.btn-default(href='#{offer.link}', role='button') View details »
   .row
     each offer in offerList
       .col-sm-6

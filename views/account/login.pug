@@ -1,29 +1,26 @@
 extends ../layout
 
 block content
-  .page-header
-    h3 Sign in
-  form.form-horizontal(method='POST')
-    input(type='hidden', name='_csrf', value=_csrf)
-    .form-group
-      label.col-sm-3.control-label(for='email') Email
-      .col-sm-7
-        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
-    .form-group
-      label.col-sm-3.control-label(for='password') Password
-      .col-sm-7
-        input.form-control(type='password', name='password', id='password', placeholder='Password', required)
-    .form-group
-      .col-sm-offset-3.col-sm-7
-        button.col-sm-3.btn.btn-primary(type='submit')
-          i.fa.fa-user
+  .mdl-layout.mdl-js-layout
+    form#login-conatiner.mdl-card.mdl-shadow--16dp(method='POST')
+      .mdl-card__supporting-text
+        #login-fab.mdl-color--accent.mdl-color-text--white
+          i#lock-icon.material-icons lock
+        #card-heading
+          | User Login
+        input(type='hidden', name='_csrf', value=_csrf)
+        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+          input#email.mdl-textfield__input(type='email', name='email', autofocus)
+          label.mdl-textfield__label(for='email') Email
+        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+          input#password.mdl-textfield__input(type='password' name='password')
+          label.mdl-textfield__label(for='password') Password
+        button.login-button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored.mdl-color-text--white(type='submit')
           | Login
-        a.btn.btn-link(href='/forgot') Forgot your password?
-    .form-group
-      .col-sm-offset-3.col-sm-7
-        hr
-    .form-group
-      .col-sm-offset-3.col-sm-7
-        a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
-          i.fa.fa-facebook
-          | Sign in with Facebook
+        .button-content
+          a.login-button.login-button-fb.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored.mdl-color-text--white(href='/auth/facebook')
+            | Login with facebook
+      .mdl-card__actions
+        a.mdl-button.mdl-js-button.mdl-button--primary(href='/signup') Register
+        a#forgotpassword.mdl-button.mdl-js-button.mdl-button--primary(href='/forgot') Forgot Password
+
