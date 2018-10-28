@@ -1,18 +1,15 @@
 if messages.errors
-  .alert.alert-danger.fade.in
-    button.close(type='button', data-dismiss='alert')
-      i.fa.fa-times-circle-o
-    for error in messages.errors
-      div= error.msg
+  for error in messages.errors
+    .mdl-js-snackbar.mdl-snackbar.mdl-snackbar--active
+      div.mdl-snackbar__text= error.msg
+      button.mdl-snackbar__action(type="button")
 if messages.info
-  .alert.alert-info.fade.in
-    button.close(type='button', data-dismiss='alert')
-      i.fa.fa-times-circle-o
-    for info in messages.info
-      div= info.msg
+  for info in messages.info
+    .mdl-js-snackbar.mdl-snackbar.mdl-snackbar--active
+      div.mdl-snackbar__text= info.msg
+      button.mdl-snackbar__action(type="button")
 if messages.success
-  .alert.alert-success.fade.in
-    button.close(type='button', data-dismiss='alert')
-      i.fa.fa-times-circle-o
-    for success in messages.success
-      div= success.msg
+  for success in messages.success
+    .mdl-js-snackbar.mdl-snackbar.mdl-snackbar--active
+      div.mdl-snackbar__text= success.msg
+      button.mdl-snackbar__action(type="button")

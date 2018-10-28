@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  .col-sm-8.col-sm-offset-2
+    form(method='POST')
+      legend Create Offer 
+      input(type='hidden', name='_csrf', value=_csrf)
+      .form-group
+        label(for='title') Title
+        input.form-control(type='text', name='title', id='title', placeholder='Title', autofocus, required)
+      .form-group
+        label(for='description') Description
+        input.form-control(type='text', name='description', id='description', placeholder='Description', required)
+      .form-group
+        label(for='link') Link
+        input.form-control(type='text', name='link', id='link', placeholder='Offer Link', required)
+      .form-group
+        button.btn.btn-primary.btn-reset(type='submit')
+          i.fa.fa-keyboard-o
+          | Create

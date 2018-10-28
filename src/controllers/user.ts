@@ -19,7 +19,8 @@ export let getLogin = (req: Request, res: Response) => {
     return res.redirect("/");
   }
   res.render("account/login", {
-    title: "Login"
+    title: "Login",
+    cssExtension: "login"
   });
 };
 
@@ -71,7 +72,8 @@ export let getSignup = (req: Request, res: Response) => {
     return res.redirect("/");
   }
   res.render("account/signup", {
-    title: "Create Account"
+    title: "Create Account",
+    cssExtension: "signup"
   });
 };
 
